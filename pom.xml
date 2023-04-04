@@ -36,6 +36,7 @@
 
              注意：这种方式一定放在 <dependencyManagement> 标签中
             -->
+<!--
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -43,6 +44,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+-->
 
             <!--这种方式是怎么使用的？不清楚-->
             <!--
@@ -61,9 +63,22 @@
 
 
         <!--无论是方式一还是方式二，这里都可以不指定version而使用，其中version在parent中指定 -->
+<!--
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+ -->
+
+        <!--
+         问题？
+         就算是不使用方式一也不使用方式二，直接这样引入web starter,依然可以使用相关注解，也能启动应用程序，也能访问mvc
+         既然这样为什么还要导入呢？
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.7.5</version>
         </dependency>
 
 
